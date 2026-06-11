@@ -32,7 +32,7 @@ spec:
             receivers:
             - name: 'email-receiver'
               email_configs:
-              - to: 'your-email-recipient@example.com'
+              - to: 'kingwinlimo@gmail.com'
                 send_resolved: true
   destination:
     server: https://kubernetes.default.svc
