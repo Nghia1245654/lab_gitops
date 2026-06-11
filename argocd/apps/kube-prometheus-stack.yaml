@@ -21,7 +21,7 @@ spec:
               smtp_smarthost: 'smtp.gmail.com:587'
               smtp_from: 'alertmanager@devops-lab.com'
               smtp_auth_username: 'kingwinlimo@gmail.com'
-              smtp_auth_password: 'bwjx lgiz soaq eevc'
+              smtp_auth_password: 'bwjxlgizsoaqeevc'
               smtp_require_tls: true
             route:
               group_by: ['alertname']
@@ -29,7 +29,12 @@ spec:
               group_interval: 10s
               repeat_interval: 1h
               receiver: 'email-receiver'
+              routes:
+              - receiver: 'null'
+                matchers:
+                - alertname = "Watchdog"
             receivers:
+            - name: 'null'
             - name: 'email-receiver'
               email_configs:
               - to: 'kingwinlimo@gmail.com'
