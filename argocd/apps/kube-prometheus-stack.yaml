@@ -20,8 +20,8 @@ spec:
               resolve_timeout: 5m
               smtp_smarthost: 'smtp.gmail.com:587'
               smtp_from: 'alertmanager@devops-lab.com'
-              smtp_auth_username: 'YOUR_EMAIL_HERE@gmail.com'
-              smtp_auth_password: 'YOUR_GMAIL_APP_PASSWORD_HERE'
+              smtp_auth_username: 'kingwinlimo@gmail.com'
+              smtp_auth_password: 'bwjx lgiz soaq eevc'
               smtp_require_tls: true
             route:
               group_by: ['alertname']
