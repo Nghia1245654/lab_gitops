@@ -1,0 +1,22 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: api-rules
+  namespace: demo
+  labels:
+    release: kube-prometheus-stack
+spec:
+  groups:
+    - name: api.rules
+      rules:
+        - alert: ApiHighErrorRate
+          expr: |
+            (sum(rate(flask_http_request_total{status="500", namespace="demo", job="api"}[2m])) or vector(0))
+            /
+            (sum(rate(flask_http_request_total{namespace="demo", job="api"}[2m])) or vector(1)) > 0.05
+          for: 1m
+          labels:
+            severity: critical
+          annotations:
+            summary: "API high error rate detected"
+            description: "API error rate in namespace demo is {{ $value | humanizePercentage }} (greater than 5%)"

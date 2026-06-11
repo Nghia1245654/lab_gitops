@@ -14,6 +14,26 @@ spec:
         prometheus:
           prometheusSpec:
             serviceMonitorSelectorNilUsesHelmValues: false
+        alertmanager:
+          config:
+            global:
+              resolve_timeout: 5m
+              smtp_smarthost: 'smtp.gmail.com:587'
+              smtp_from: 'alertmanager@devops-lab.com'
+              smtp_auth_username: 'YOUR_EMAIL_HERE@gmail.com'
+              smtp_auth_password: 'YOUR_GMAIL_APP_PASSWORD_HERE'
+              smtp_require_tls: true
+            route:
+              group_by: ['alertname']
+              group_wait: 10s
+              group_interval: 10s
+              repeat_interval: 1h
+              receiver: 'email-receiver'
+            receivers:
+            - name: 'email-receiver'
+              email_configs:
+              - to: 'your-email-recipient@example.com'
+                send_resolved: true
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
