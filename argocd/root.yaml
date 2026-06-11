@@ -1,0 +1,10 @@
+# file: argocd/root.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: { name: root, namespace: argocd }
+spec:
+  source:
+    repoURL: https://github.com/Nghia1245654/lab_gitops.git
+    path: argocd/apps        # <- thư mục chứa các App con (đã có web.yaml)
+  destination: { server: https://kubernetes.default.svc, namespace: argocd }
+  syncPolicy: { automated: { prune: true, selfHeal: true } }
