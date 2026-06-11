@@ -16,7 +16,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
 spec:
-  replicas: 2
+  replicas: two
   selector:
     matchLabels:
       app: web
@@ -30,7 +30,7 @@ spec:
         image: nginx:1.27
         envFrom:
         - configMapRef:
-            name: web-config
+            name: web-coqnfig
 ---
 apiVersion: v1
 kind: Service
