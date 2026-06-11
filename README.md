@@ -87,5 +87,4 @@ Bạn có thể chụp lại ảnh màn hình chạy lệnh `kubectl argo rollou
   * Tiêu đề/Nội dung email sẽ hiển thị thông tin cảnh báo: `[FIRING:1] ApiHighErrorRate`.
   * Nội dung chi tiết chứa thông tin: `"API high error rate detected"`.
   * *Lưu ý: Nếu không thấy ở hộp thư đến, hãy kiểm tra cả mục Thư rác (Spam).*
-
-*(Chèn ảnh chụp email cảnh báo nhận được trong Gmail vào đây)*
+![alt text](image/image.png)
