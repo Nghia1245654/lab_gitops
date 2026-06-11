@@ -4,7 +4,7 @@ metadata:
   name: todo-backend
   namespace: todo
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   replicas: 1
   selector:
@@ -30,7 +30,7 @@ metadata:
   name: todo-backend-svc
   namespace: todo
   annotations:
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   selector:
     app: todo-backend

@@ -4,7 +4,7 @@ metadata:
   name: todo-frontend-html
   namespace: todo
   annotations:
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "2"
 data:
   index.html: |
     <!DOCTYPE html>
@@ -94,7 +94,7 @@ metadata:
   name: todo-frontend-nginx
   namespace: todo
   annotations:
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "2"
 data:
   default.conf: |
     server {
@@ -114,7 +114,7 @@ metadata:
   name: todo-frontend
   namespace: todo
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   replicas: 1
   selector:
@@ -149,7 +149,7 @@ metadata:
   name: todo-frontend-svc
   namespace: todo
   annotations:
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "4"
 spec:
   selector:
     app: todo-frontend
