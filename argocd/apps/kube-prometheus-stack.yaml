@@ -15,13 +15,16 @@ spec:
           prometheusSpec:
             serviceMonitorSelectorNilUsesHelmValues: false
         alertmanager:
+          alertmanagerSpec:
+            secrets:
+              - alertmanager-smtp-password
           config:
             global:
               resolve_timeout: 5m
               smtp_smarthost: 'smtp.gmail.com:587'
               smtp_from: 'alertmanager@devops-lab.com'
               smtp_auth_username: 'kingwinlimo@gmail.com'
-              smtp_auth_password: 'bwjxlgizsoaqeevc'
+              smtp_auth_password_file: '/etc/alertmanager/secrets/alertmanager-smtp-password/password'
               smtp_require_tls: true
             route:
               group_by: ['alertname']
