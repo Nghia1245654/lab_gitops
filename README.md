@@ -76,7 +76,7 @@ Khi phát hiện lỗi nghiêm trọng trên hệ thống và bạn muốn khôi
 
 ### 3.1. Minh Chứng 1: Canary Auto-Abort & Rollback tự động trên Terminal
 *Khi phiên bản lỗi v5 được triển khai, hệ thống tự động phát hiện tỷ lệ lỗi tăng cao, Abort đợt deploy và Rollback về v4:*
-![alt text](image/d0c3ff8e-c2dd-4fde-8ea8-53c886df849b.jpeg)
+![alt text](image/image%20copy%205.png)
 
 ---
 
